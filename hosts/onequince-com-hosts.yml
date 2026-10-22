@@ -1,0 +1,77 @@
+generated: '2026-10-22'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 5
+  own: 3
+  other_domain: 2
+  platform: 0
+  roles:
+  - api
+  - docs
+  - identity
+  - website
+hosts:
+- host: api.onequince.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: onequince.com
+  role: api
+  relation: own
+- host: api.quince.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: quince.com
+  role: api
+  relation: other-domain
+- host: apidocs.onequince.com
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - docs-index
+  - contract-discovery
+  - well-known
+  types:
+  - Documentation
+  serves:
+  - docs
+  registrable_domain: onequince.com
+  role: docs
+  relation: own
+- host: www.onequince.com
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Website
+  serves:
+  - cdn
+  vendor: cloudfront
+  registrable_domain: onequince.com
+  role: website
+  relation: own
+- host: www.quince.com
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types:
+  - TermsOfService
+  - Security
+  - PrivacyPolicy
+  - Login
+  serves: []
+  registrable_domain: quince.com
+  role: identity
+  relation: other-domain

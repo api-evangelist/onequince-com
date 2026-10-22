@@ -1,25 +1,85 @@
 aid: onequince-com
+
 name: Quince
+
+image: https://images.quince.com/3jTOPmgGrtpxP7ZYUJJfds/31eaa48e7392a7e1c154bbe305e4f267/Rectangle_1380.jpg?fm=webP&q=90&w=1600
+
 description: 'Quince is a company surfaced via the API Evangelist harvest backlog (source: vc-portfolio;
   backed by insight-partners) and added to the network as a stub for full-pipeline profiling.'
+
 url: https://raw.githubusercontent.com/api-evangelist/onequince-com/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:vc-portfolio
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-22 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-22'
+
 modified: '2026-10-22'
+
 tags:
-- Company
-apis: []
+- Furniture
+- Accessories
+- Gifts
+- Corporate Gifting
+- White‑Label
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
-x-backed-by:
-- insight-partners
+
 common:
+- type: LLMsTxt
+  url: llms/onequince-com-llms.txt
+- type: Hosts
+  url: hosts/onequince-com-hosts.yml
+- type: Vendors
+  url: vendors/onequince-com-vendors.yml
+- type: TermsOfService
+  url: https://www.quince.com/terms
+- type: Security
+  url: https://www.quince.com/security/vulnerability-disclosure-policy?trafficSource=footer
+- type: PrivacyPolicy
+  url: https://www.quince.com/privacy-policy
+- type: Login
+  url: https://www.quince.com/log-in
+- type: Documentation
+  url: https://apidocs.onequince.com/
+- type: DomainSecurity
+  url: security/onequince-com-domain-security.yml
 - type: Website
   url: https://www.onequince.com/
+
+apis: []
+
+x-backed-by:
+- insight-partners
+
+x-coverage:
+  state: none
+  reason: no-developer-program
+  method: derived
+  generated: '2026-10-22'
+  generator: derive-coverage.py (pre-flight evidence)
+  detail: >-
+    the company publishes no developer documentation host and no machine-readable contract on its own domain
+  evidence:
+  - url: https://www.onequince.com/mcp
+    status: 403
+  - url: https://apidocs.onequince.com/mcp
+    status: 403
+  - url: https://www.onequince.com/
+    status: 200
+x-enrichment:
+  date: '2026-10-22'
+  status: enriched
+  artifacts_added: 10
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
